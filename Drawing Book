@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+int Counte(int n, int p) {
+    int turn=0;
+    int reach;
+    if(n%2==1){
+        reach = n-1;
+    }
+    else{
+        reach=n;
+    }
+
+    while(p<reach){
+        turn++;
+        reach-=2;
+    }
+    return turn;
+
+}
+int Counts(int n, int p) {
+    int turn=0;
+    int reach=1;
+    while(reach<p){
+        turn++;
+        reach+=2;
+    }
+    return turn;
+}
+
+int main()
+{
+    int n,p;
+    cin>>n>>p;
+    cout<<min(Counts(n,p),Counte(n,p));
+    return 0;
+}

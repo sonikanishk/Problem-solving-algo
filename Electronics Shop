@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int maxinb(int buj,int n,int m,int* a,int* b){
+    int max=-1;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            if(a[i]+b[j]<=buj && a[i]+b[j]>max ){
+                max=a[i]+b[j];
+            }
+        }
+    }
+    return max;
+}
+
+int main()
+{
+
+    int b,n,m;
+    cin >> b >> n >> m;
+    int* a1= new int[n];
+    int* a2= new int[m];
+    for(int i=0;i<n;i++){
+        cin>>a1[i];
+    }
+    for(int i=0;i<m;i++){
+        cin>>a2[i];
+    }
+    cout<<maxinb(b,n,m,a1,a2);
+    return 0;
+}

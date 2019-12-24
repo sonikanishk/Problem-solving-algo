@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int i,h,max;
+    int a[26];
+    char ch[20];
+    for(i=0;i<26;i++)
+      cin>>a[i];
+      cin.get();
+    cin.getline(ch,20);
+    int len = strlen(ch);
+    for(i=0;i<len;i++)
+      {
+          int index = ch[i] - 97;
+         h = a[index];
+         if(i==0)
+           max=h;
+         if(i>0)
+         {
+             if(h>max)
+           max=h;
+         }
+      }
+      
+   cout<<(max*len);
+}

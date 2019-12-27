@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+int reverse(int a){
+    int rev=0;
+    int rem=a%10;
+    while(a!=0){
+        rev=10*rev+rem;
+        a=a/10;
+        rem=a%10;
+
+    }
+    return rev;
+}
+bool check(int i,int k){
+    int z = i-reverse(i);
+    if(z<0)
+        z=-z;
+    if(z%k==0)
+        return true;
+    
+    return false;
+}
+int main(){
+    int i,j,k,c=0;
+    cin>>i>>j>>k;
+    for(int a=i;a<=j;a++){
+        if(check(a,k)==true)
+            c++;
+    }
+    cout<<c;
+
+    return 0;
+}
